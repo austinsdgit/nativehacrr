@@ -2,7 +2,7 @@
 #
 # This script will pass the QMgr name for the recovery cluster (CLUSTER 2) to switch CRR Role
 #
-source ../../setup.properties
+source ../setup.properties
 
 export QMInstance=$1
 

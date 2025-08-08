@@ -2,7 +2,7 @@
 #
 # This script will pass the QMgr name for the Live cluster (CLUSTER 1) to switch CRR Role
 #
-source ../../setup.properties
+source ../setup.properties
 
 export QMInstance=$1
 

@@ -3,7 +3,7 @@
 # This script will get the host name for the Recovery cluster and will patch the live Cluster 
 # to connect to the Recovery cluster.
 #
-source ../../setup.properties
+source ../setup.properties
 export QMInstance=$1
 
 # Logon to the Recovery cluster to get the HOST name 

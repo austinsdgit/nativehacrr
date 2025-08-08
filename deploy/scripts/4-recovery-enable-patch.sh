@@ -4,7 +4,7 @@
 # to connect to the Live cluster.
 #
 
-source ../../setup.properties
+source ../setup.properties
 
 export QMInstance=$1
 
