@@ -2,7 +2,7 @@
 #
 # provide needed variables to pass to the switch patch script to switch roles
 #
-source ../../setup.properties
+source ../setup.properties
 
 
 export HA_DIR_DEPLOY="nativeha-crr/deploy"
