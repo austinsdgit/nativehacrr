@@ -1,0 +1,51 @@
+{
+  "channel":
+  [
+    {
+      "general":
+      {
+        "description": "MQ channel details"
+      },
+      "name": "MQ01HACHL",
+      "clientConnection":
+      {
+        "connection":
+        [
+          {
+            "host": "occmq-mq01ha-ibm-mq-qm-occmq.apps.itz-znevd1.osv.techzone.ibm.com",
+            "port": 443
+          }
+        ],
+        "queueManager": "mq01ha"
+      },
+      "transmissionSecurity":
+      {
+        "cipherSpecification": "ANY_TLS12_OR_HIGHER"
+      },
+	  "type": "clientConnection"
+    },
+    {
+      "general":
+      {
+        "description": "MQ channel details"
+      },
+      "name": "MQ01HACHL",
+      "clientConnection":
+      {
+        "connection":
+        [
+          {
+            "host": "occmq-mq01ha-ibm-mq-qm-occmq.apps.itz-znevd1.osv.techzone.ibm.com",
+            "port": 443
+          }
+        ],
+        "queueManager": "mq01ha"
+      },
+      "transmissionSecurity":
+      {
+        "cipherSpecification": "ANY_TLS12_OR_HIGHER"
+      },
+	  "type": "clientConnection"
+    }
+  ]
+}EOF

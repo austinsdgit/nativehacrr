@@ -1,0 +1,20 @@
+spec:
+  queueManager:
+    availability:
+      tls:
+        secretName: mq02ha-qm-tls
+      nativeHAGroups:
+        local:
+          name: live_group
+          role: Live
+          route:
+            enabled: true
+        remotes:
+          - addresses:
+              - 'occmq2-mq02ha-ibm-mq-nhacrr-occmq2.apps.itz-rdwaa0.infra01-lb.dal14.techzone.ibm.com:443'
+            name: recovery_group
+            trust:
+              - secret:
+                  items:
+                    - tls.crt
+                  secretName: mq02ha-qm-tls

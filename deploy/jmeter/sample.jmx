@@ -1,0 +1,758 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jmeterTestPlan version="1.2" properties="5.0" jmeter="5.6.3">
+  <hashTree>
+    <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="Test Plan">
+      <boolProp name="TestPlan.tearDown_on_shutdown">true</boolProp>
+      <elementProp name="TestPlan.user_defined_variables" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables">
+        <collectionProp name="Arguments.arguments"/>
+      </elementProp>
+    </TestPlan>
+    <hashTree>
+      <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables">
+        <collectionProp name="Arguments.arguments">
+          <elementProp name="ARCA_sleeptime" elementType="Argument">
+            <stringProp name="Argument.name">ARCA_sleeptime</stringProp>
+            <stringProp name="Argument.value">1</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+            <stringProp name="Argument.desc">15</stringProp>
+          </elementProp>
+          <elementProp name="ARCA_loopcounter" elementType="Argument">
+            <stringProp name="Argument.name">ARCA_loopcounter</stringProp>
+            <stringProp name="Argument.value">300</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="AMEX_sleeptime" elementType="Argument">
+            <stringProp name="Argument.name">AMEX_sleeptime</stringProp>
+            <stringProp name="Argument.value">1</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+            <stringProp name="Argument.desc">20</stringProp>
+          </elementProp>
+          <elementProp name="AMEX_loopcounter" elementType="Argument">
+            <stringProp name="Argument.name">AMEX_loopcounter</stringProp>
+            <stringProp name="Argument.value">88044</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="BATS_sleeptime" elementType="Argument">
+            <stringProp name="Argument.name">BATS_sleeptime</stringProp>
+            <stringProp name="Argument.value">1</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="BATS_loopcounter" elementType="Argument">
+            <stringProp name="Argument.name">BATS_loopcounter</stringProp>
+            <stringProp name="Argument.value">88332</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="BOX_sleeptime" elementType="Argument">
+            <stringProp name="Argument.name">BOX_sleeptime</stringProp>
+            <stringProp name="Argument.value">1</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="BOX_loopcounter" elementType="Argument">
+            <stringProp name="Argument.name">BOX_loopcounter</stringProp>
+            <stringProp name="Argument.value">300</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="C2_sleeptime" elementType="Argument">
+            <stringProp name="Argument.name">C2_sleeptime</stringProp>
+            <stringProp name="Argument.value">1</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="C2_loopcounter" elementType="Argument">
+            <stringProp name="Argument.name">C2_loopcounter</stringProp>
+            <stringProp name="Argument.value">54032</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="CFE_sleeptime" elementType="Argument">
+            <stringProp name="Argument.name">CFE_sleeptime</stringProp>
+            <stringProp name="Argument.value">3</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="CFE_loopcounter" elementType="Argument">
+            <stringProp name="Argument.name">CFE_loopcounter</stringProp>
+            <stringProp name="Argument.value">27703</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="EDGX_sleeptime" elementType="Argument">
+            <stringProp name="Argument.name">EDGX_sleeptime</stringProp>
+            <stringProp name="Argument.value">3</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="EDGX_loopcounter" elementType="Argument">
+            <stringProp name="Argument.name">EDGX_loopcounter</stringProp>
+            <stringProp name="Argument.value">92946</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="EMLD_sleeptime" elementType="Argument">
+            <stringProp name="Argument.name">EMLD_sleeptime</stringProp>
+            <stringProp name="Argument.value">3</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="EMLD_loopcounter" elementType="Argument">
+            <stringProp name="Argument.name">EMLD_loopcounter</stringProp>
+            <stringProp name="Argument.value">43985</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="GEM_sleeptime" elementType="Argument">
+            <stringProp name="Argument.name">GEM_sleeptime</stringProp>
+            <stringProp name="Argument.value">3</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="GEM_loopcounter" elementType="Argument">
+            <stringProp name="Argument.name">GEM_loopcounter</stringProp>
+            <stringProp name="Argument.value">26037</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="ISE_sleeptime" elementType="Argument">
+            <stringProp name="Argument.name">ISE_sleeptime</stringProp>
+            <stringProp name="Argument.value">3</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="ISE_loopcounter" elementType="Argument">
+            <stringProp name="Argument.name">ISE_loopcounter</stringProp>
+            <stringProp name="Argument.value">78019</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="MCRY_sleeptime" elementType="Argument">
+            <stringProp name="Argument.name">MCRY_sleeptime</stringProp>
+            <stringProp name="Argument.value">3</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="MCRY_loopcounter" elementType="Argument">
+            <stringProp name="Argument.name">MCRY_loopcounter</stringProp>
+            <stringProp name="Argument.value">30548</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="MIAX_sleeptime" elementType="Argument">
+            <stringProp name="Argument.name">MIAX_sleeptime</stringProp>
+            <stringProp name="Argument.value">3</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="MIAX_loopcounter" elementType="Argument">
+            <stringProp name="Argument.name">MIAX_loopcounter</stringProp>
+            <stringProp name="Argument.value">70160</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="MPRL_sleeptime" elementType="Argument">
+            <stringProp name="Argument.name">MPRL_sleeptime</stringProp>
+            <stringProp name="Argument.value">3</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="MPRL_loopcounter" elementType="Argument">
+            <stringProp name="Argument.name">MPRL_loopcounter</stringProp>
+            <stringProp name="Argument.value">52272</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="NOBO_sleeptime" elementType="Argument">
+            <stringProp name="Argument.name">NOBO_sleeptime</stringProp>
+            <stringProp name="Argument.value">1</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="NOBO_loopcounter" elementType="Argument">
+            <stringProp name="Argument.name">NOBO_loopcounter</stringProp>
+            <stringProp name="Argument.value">61591</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="PHLX_sleeptime" elementType="Argument">
+            <stringProp name="Argument.name">PHLX_sleeptime</stringProp>
+            <stringProp name="Argument.value">1</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="PHLX_loopcounter" elementType="Argument">
+            <stringProp name="Argument.name">PHLX_loopcounter</stringProp>
+            <stringProp name="Argument.value">91780</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="SML_sleeptime" elementType="Argument">
+            <stringProp name="Argument.name">SML_sleeptime</stringProp>
+            <stringProp name="Argument.value">20</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="SML_loopcounter" elementType="Argument">
+            <stringProp name="Argument.name">SML_loopcounter</stringProp>
+            <stringProp name="Argument.value">108</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="NSDQ_sleeptime" elementType="Argument">
+            <stringProp name="Argument.name">NSDQ_sleeptime</stringProp>
+            <stringProp name="Argument.value">1</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="NSDQ_loopcounter" elementType="Argument">
+            <stringProp name="Argument.name">NSDQ_loopcounter</stringProp>
+            <stringProp name="Argument.value">142600</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="CBOE_sleeptime" elementType="Argument">
+            <stringProp name="Argument.name">CBOE_sleeptime</stringProp>
+            <stringProp name="Argument.value">1</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="CBOE_loopcounter" elementType="Argument">
+            <stringProp name="Argument.name">CBOE_loopcounter</stringProp>
+            <stringProp name="Argument.value">300</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="filePath_old" elementType="Argument">
+            <stringProp name="Argument.name">filePath_old</stringProp>
+            <stringProp name="Argument.value">/home/spent01/Scripts/LoadTest/Day2/TradeFiles/1X/MtchID_SplitFiles/SplitFiles/</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="filePath" elementType="Argument">
+            <stringProp name="Argument.name">filePath</stringProp>
+            <stringProp name="Argument.value">/home/spent01/Scripts/LoadTest/Day2/TradeFiles/1X/SplitFiles/</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+        </collectionProp>
+      </Arguments>
+      <hashTree/>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group - ARCA - Batch1">
+        <intProp name="ThreadGroup.num_threads">10</intProp>
+        <intProp name="ThreadGroup.ramp_time">1</intProp>
+        <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller">
+          <stringProp name="LoopController.loops">1</stringProp>
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+        </elementProp>
+      </ThreadGroup>
+      <hashTree>
+        <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="JSR223 Sampler - ARCA-1">
+          <stringProp name="scriptLanguage">groovy</stringProp>
+          <stringProp name="parameters"></stringProp>
+          <stringProp name="filename"></stringProp>
+          <stringProp name="cacheKey">false</stringProp>
+          <stringProp name="script">import com.ibm.msg.client.jms.JmsConnectionFactory
+import com.ibm.msg.client.jms.JmsFactoryFactory
+import com.ibm.msg.client.wmq.WMQConstants
+import javax.jms.Session
+
+import javax.jms.TextMessage
+import javax.jms.MessageProducer
+import javax.net.ssl.SSLContext
+import javax.net.ssl.SSLSocketFactory
+import javax.net.ssl.*
+import java.security.KeyStore
+import java.io.FileInputStream
+import java.lang.*;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+
+def hostName=&quot;occmq-mq01ha-ibm-mq.occmq.svc.cluster.local&quot;
+def hostPort=1414
+def channelName=&quot;MQ.QS.SVRCONN&quot;
+def queueManagerName=&quot;mq01ha&quot;
+def queueName=&quot;DEV.QUEUE.1&quot;
+//def queueName=&quot;TRADEVAL.MATCHED.E2.FROMARCA.REGULAR.&quot; + vars.get(&quot;env&quot;)
+//def cipherSuite = &quot;TLS_RSA_WITH_AES_256_CBC_SHA256&quot;
+//def sslPeerName = &quot;&quot;
+
+//java.lang.System.setProperty(&quot;com.ibm.mq.cfg.useIBMCipherMappings&quot;, &quot;false&quot;)
+def factoryFactoryInstance = JmsFactoryFactory.getInstance(WMQConstants.WMQ_PROVIDER)
+def connectionFactory = factoryFactoryInstance.createConnectionFactory()
+
+try {
+    connectionFactory.setStringProperty(WMQConstants.WMQ_HOST_NAME, hostName)
+    connectionFactory.setIntProperty(WMQConstants.WMQ_PORT, hostPort)
+    connectionFactory.setStringProperty(WMQConstants.WMQ_CHANNEL, channelName)
+    connectionFactory.setIntProperty(WMQConstants.WMQ_CONNECTION_MODE, WMQConstants.WMQ_CM_CLIENT)
+    connectionFactory.setStringProperty(WMQConstants.WMQ_QUEUE_MANAGER, queueManagerName)
+//Added for USER_AUTHENTICATION_MQCSP
+    //connectionFactory.setBooleanProperty(WMQConstants.USER_AUTHENTICATION_MQCSP, false)
+    //connectionFactory.setStringProperty(WMQConstants.USERID, &quot;srvc_rtc_mq&quot;)
+    
+    // Load the keystore
+    //String keystoreType = &quot;jks&quot; 
+    //String keystorePath = &quot;rtc_mq_client_07312024.jks&quot; 
+    //String keystorePassword = &quot;&quot;
+    
+    //KeyStore ks = KeyStore.getInstance(keystoreType)
+    //FileInputStream fis = new FileInputStream(keystorePath)
+    //ks.load(fis, keystorePassword.toCharArray())
+    
+    // Init the KeyManagerFactory with the keystore
+    //KeyManagerFactory kmf = KeyManagerFactory.getInstance(KeyManagerFactory.getDefaultAlgorithm())
+    //kmf.init(ks, keystorePassword.toCharArray())
+    
+    // Init the TrustManagerFactory with the keystore
+    //TrustManagerFactory tmf = TrustManagerFactory.getInstance(TrustManagerFactory.getDefaultAlgorithm())
+    //tmf.init(ks)
+    
+    // Init SSLContext with the key managers and trust managers
+    //SSLContext sslContext = SSLContext.getInstance(&quot;TLSv1.2&quot;)
+    //sslContext.init(kmf.getKeyManagers(), tmf.getTrustManagers(), new java.security.SecureRandom())
+    //SSLSocketFactory sslSocketFactory = sslContext.getSocketFactory()
+
+    //connectionFactory.setStringProperty(WMQConstants.WMQ_SSL_CIPHER_SPEC, cipherSuite)
+    //connectionFactory.setStringProperty(WMQConstants.WMQ_SSL_CIPHER_SUITE, &quot;&quot;)
+    //connectionFactory.setObjectProperty(WMQConstants.WMQ_SSL_SOCKET_FACTORY, sslSocketFactory)
+    //connectionFactory.setStringProperty(WMQConstants.WMQ_SSL_PEER_NAME, sslPeerName)
+
+    def jmsConnection = connectionFactory.createConnection()
+    def jmsSession = jmsConnection.createSession(true, Session.AUTO_ACKNOWLEDGE)
+    def destinationQueue = jmsSession.createQueue(queueName)
+
+    log.info(&quot;### MQ setup completed&quot;)
+
+    def messageProducer = jmsSession.createProducer(destinationQueue)
+
+//String filepath = &quot;H:\\LoadTesting\\1XVolume\\DataFiles\\ARCA\\1X\\Account\\ARCAD0914_1.txt&quot;;
+//String filepath = vars.get(&quot;filePath&quot;) + &quot;sample_msg.txt&quot;;
+String filepath = &quot;/mnt/sample_msg.txt&quot;;
+log.info(&quot;####filepath == &quot;+filepath);
+
+//StringBuilder filecontent = new StringBuilder();
+try {
+	//FileReader fr = new FileReader(filepath);
+	//BufferedReader br = new BufferedReader(fr);
+
+	String msg;
+	lc = Integer.parseInt(vars.get(&quot;ARCA_loopcounter&quot;))
+	//sleep_time = Integer.parseInt(vars.get(&quot;ARCA_sleeptime&quot;))
+	//log.info(&quot;loopcounter is&quot; + lc)
+	
+	for(i=0;i&lt;lc;i++){
+		//msg = br.readLine()
+			//StringBuilder filecontent = new StringBuilder();
+		//filecontent.append(msg);
+		//vars.put(&quot;filecontent&quot;,filecontent.toString());
+		//log.info(&quot;in Beanshell:*******&quot; + filecontent);
+		//message = msg.toString()
+		message = &quot;Greg Rocks!!! for queue &quot; + queueName;
+		log.info(&quot;message to send to &quot; + queueName + &quot; is &quot; + message);
+	   	def textMessage = jmsSession.createTextMessage(message);
+	   	
+	    	messageProducer.send(textMessage);
+	    	//Thread.sleep(sleep_time)
+	 	//log.info(&quot;Message : &quot; + msg);
+	}
+	//br.close();
+	jmsSession.commit();
+}
+catch (IOException e) {
+	log.error(&quot;Error reading the file: &quot; + e.getMessage());
+}
+
+    
+    
+    log.info(&quot;### Message sent successfully&quot;)
+
+} 
+catch (Exception e) {
+    log.error(&quot;Exception: &quot; + e.toString())
+    e.printStackTrace()
+}
+finally {
+    messageProducer.close()
+    jmsSession.close()
+    jmsConnection.close()
+}
+</stringProp>
+        </JSR223Sampler>
+        <hashTree/>
+        <ResultCollector guiclass="StatVisualizer" testclass="ResultCollector" testname="Aggregate Report">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <sentBytes>true</sentBytes>
+              <url>true</url>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+              <connectTime>true</connectTime>
+            </value>
+          </objProp>
+          <stringProp name="filename">/mnt/ARCA_Batch1.csv</stringProp>
+        </ResultCollector>
+        <hashTree/>
+      </hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group - Box - Batch1">
+        <intProp name="ThreadGroup.num_threads">10</intProp>
+        <intProp name="ThreadGroup.ramp_time">1</intProp>
+        <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller">
+          <stringProp name="LoopController.loops">1</stringProp>
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+        </elementProp>
+      </ThreadGroup>
+      <hashTree>
+        <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="JSR223 Sampler - BOX - 1" enabled="true">
+          <stringProp name="scriptLanguage">groovy</stringProp>
+          <stringProp name="parameters"></stringProp>
+          <stringProp name="filename"></stringProp>
+          <stringProp name="cacheKey">false</stringProp>
+          <stringProp name="script">import com.ibm.msg.client.jms.JmsConnectionFactory
+import com.ibm.msg.client.jms.JmsFactoryFactory
+import com.ibm.msg.client.wmq.WMQConstants
+import javax.jms.Session
+
+import javax.jms.TextMessage
+import javax.jms.MessageProducer
+import javax.net.ssl.SSLContext
+import javax.net.ssl.SSLSocketFactory
+import javax.net.ssl.*
+import java.security.KeyStore
+import java.io.FileInputStream
+import java.lang.*;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+
+def hostName=&quot;occmq-mq01ha-ibm-mq.occmq.svc.cluster.local&quot;
+def hostPort=1414
+def channelName=&quot;MQ.QS.SVRCONN&quot;
+def queueManagerName=&quot;mq01ha&quot;
+def queueName=&quot;DEV.QUEUE.2&quot;
+//def queueName=&quot;TRADEVAL.MATCHED.E2.FROMARCA.REGULAR.&quot; + vars.get(&quot;env&quot;)
+//def cipherSuite = &quot;TLS_RSA_WITH_AES_256_CBC_SHA256&quot;
+//def sslPeerName = &quot;&quot;
+
+//java.lang.System.setProperty(&quot;com.ibm.mq.cfg.useIBMCipherMappings&quot;, &quot;false&quot;)
+def factoryFactoryInstance = JmsFactoryFactory.getInstance(WMQConstants.WMQ_PROVIDER)
+def connectionFactory = factoryFactoryInstance.createConnectionFactory()
+
+try {
+    connectionFactory.setStringProperty(WMQConstants.WMQ_HOST_NAME, hostName)
+    connectionFactory.setIntProperty(WMQConstants.WMQ_PORT, hostPort)
+    connectionFactory.setStringProperty(WMQConstants.WMQ_CHANNEL, channelName)
+    connectionFactory.setIntProperty(WMQConstants.WMQ_CONNECTION_MODE, WMQConstants.WMQ_CM_CLIENT)
+    connectionFactory.setStringProperty(WMQConstants.WMQ_QUEUE_MANAGER, queueManagerName)
+//Added for USER_AUTHENTICATION_MQCSP
+    //connectionFactory.setBooleanProperty(WMQConstants.USER_AUTHENTICATION_MQCSP, false)
+    //connectionFactory.setStringProperty(WMQConstants.USERID, &quot;srvc_rtc_mq&quot;)
+    
+    // Load the keystore
+    //String keystoreType = &quot;jks&quot; 
+    //String keystorePath = &quot;rtc_mq_client_07312024.jks&quot; 
+    //String keystorePassword = &quot;&quot;
+    
+    //KeyStore ks = KeyStore.getInstance(keystoreType)
+    //FileInputStream fis = new FileInputStream(keystorePath)
+    //ks.load(fis, keystorePassword.toCharArray())
+    
+    // Init the KeyManagerFactory with the keystore
+    //KeyManagerFactory kmf = KeyManagerFactory.getInstance(KeyManagerFactory.getDefaultAlgorithm())
+    //kmf.init(ks, keystorePassword.toCharArray())
+    
+    // Init the TrustManagerFactory with the keystore
+    //TrustManagerFactory tmf = TrustManagerFactory.getInstance(TrustManagerFactory.getDefaultAlgorithm())
+    //tmf.init(ks)
+    
+    // Init SSLContext with the key managers and trust managers
+    //SSLContext sslContext = SSLContext.getInstance(&quot;TLSv1.2&quot;)
+    //sslContext.init(kmf.getKeyManagers(), tmf.getTrustManagers(), new java.security.SecureRandom())
+    //SSLSocketFactory sslSocketFactory = sslContext.getSocketFactory()
+
+    //connectionFactory.setStringProperty(WMQConstants.WMQ_SSL_CIPHER_SPEC, cipherSuite)
+    //connectionFactory.setStringProperty(WMQConstants.WMQ_SSL_CIPHER_SUITE, &quot;&quot;)
+    //connectionFactory.setObjectProperty(WMQConstants.WMQ_SSL_SOCKET_FACTORY, sslSocketFactory)
+    //connectionFactory.setStringProperty(WMQConstants.WMQ_SSL_PEER_NAME, sslPeerName)
+
+    def jmsConnection = connectionFactory.createConnection()
+    def jmsSession = jmsConnection.createSession(true, Session.AUTO_ACKNOWLEDGE)
+    def destinationQueue = jmsSession.createQueue(queueName)
+
+    log.info(&quot;### MQ setup completed&quot;)
+
+    def messageProducer = jmsSession.createProducer(destinationQueue)
+
+//String filepath = &quot;H:\\LoadTesting\\1XVolume\\DataFiles\\ARCA\\1X\\Account\\ARCAD0914_1.txt&quot;;
+//String filepath = vars.get(&quot;filePath&quot;) + &quot;sample_msg.txt&quot;;
+String filepath = &quot;/mnt/sample_msg.txt&quot;;
+log.info(&quot;####filepath == &quot;+filepath);
+
+//StringBuilder filecontent = new StringBuilder();
+try {
+	//FileReader fr = new FileReader(filepath);
+	//BufferedReader br = new BufferedReader(fr);
+
+	String msg;
+	lc = Integer.parseInt(vars.get(&quot;BOX_loopcounter&quot;))
+	//sleep_time = Integer.parseInt(vars.get(&quot;BOX_sleeptime&quot;))
+	//log.info(&quot;loopcounter is&quot; + lc)
+	
+	for(i=0;i&lt;lc;i++){
+		//msg = br.readLine()
+			//StringBuilder filecontent = new StringBuilder();
+		//filecontent.append(msg);
+		//vars.put(&quot;filecontent&quot;,filecontent.toString());
+		//log.info(&quot;in Beanshell:*******&quot; + filecontent);
+		//message = msg.toString()
+		message = &quot;Greg Rocks!!! for queue &quot; + queueName;
+		log.info(&quot;message to send to &quot; + queueName + &quot; is &quot; + message);
+	   	def textMessage = jmsSession.createTextMessage(message)
+	    	messageProducer.send(textMessage)
+	    	//Thread.sleep(sleep_time)
+	 	//log.info(&quot;Message : &quot; + msg);
+	}
+	//br.close();
+	jmsSession.commit();
+}
+catch (IOException e) {
+	log.error(&quot;Error reading the file: &quot; + e.getMessage());
+}
+
+    
+    
+    log.info(&quot;### Message sent successfully&quot;)
+
+} 
+catch (Exception e) {
+    log.error(&quot;Exception: &quot; + e.toString())
+    e.printStackTrace()
+}
+finally {
+    messageProducer.close()
+    jmsSession.close()
+    jmsConnection.close()
+}
+</stringProp>
+        </JSR223Sampler>
+        <hashTree/>
+        <ResultCollector guiclass="StatVisualizer" testclass="ResultCollector" testname="Aggregate Report">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <sentBytes>true</sentBytes>
+              <url>true</url>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+              <connectTime>true</connectTime>
+            </value>
+          </objProp>
+          <stringProp name="filename">/mnt/BOX_Batch1.csv</stringProp>
+        </ResultCollector>
+        <hashTree/>
+      </hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group - CBOE - Batch1">
+        <intProp name="ThreadGroup.num_threads">10</intProp>
+        <intProp name="ThreadGroup.ramp_time">1</intProp>
+        <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller">
+          <stringProp name="LoopController.loops">1</stringProp>
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+        </elementProp>
+      </ThreadGroup>
+      <hashTree>
+        <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="JSR223 Sampler - CBOE - 1">
+          <stringProp name="scriptLanguage">groovy</stringProp>
+          <stringProp name="parameters"></stringProp>
+          <stringProp name="filename"></stringProp>
+          <stringProp name="cacheKey">false</stringProp>
+          <stringProp name="script">import com.ibm.msg.client.jms.JmsConnectionFactory
+import com.ibm.msg.client.jms.JmsFactoryFactory
+import com.ibm.msg.client.wmq.WMQConstants
+import javax.jms.Session
+
+import javax.jms.TextMessage
+import javax.jms.MessageProducer
+import javax.net.ssl.SSLContext
+import javax.net.ssl.SSLSocketFactory
+import javax.net.ssl.*
+import java.security.KeyStore
+import java.io.FileInputStream
+import java.lang.*;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+
+def hostName=&quot;occmq-mq01ha-ibm-mq.occmq.svc.cluster.local&quot;
+def hostPort=1414
+def channelName=&quot;MQ.QS.SVRCONN&quot;
+def queueManagerName=&quot;mq01ha&quot;
+def queueName=&quot;DEV.QUEUE.3&quot;
+//def queueName=&quot;TRADEVAL.MATCHED.E2.FROMARCA.REGULAR.&quot; + vars.get(&quot;env&quot;)
+//def cipherSuite = &quot;TLS_RSA_WITH_AES_256_CBC_SHA256&quot;
+//def sslPeerName = &quot;&quot;
+
+//java.lang.System.setProperty(&quot;com.ibm.mq.cfg.useIBMCipherMappings&quot;, &quot;false&quot;)
+def factoryFactoryInstance = JmsFactoryFactory.getInstance(WMQConstants.WMQ_PROVIDER)
+def connectionFactory = factoryFactoryInstance.createConnectionFactory()
+
+try {
+    connectionFactory.setStringProperty(WMQConstants.WMQ_HOST_NAME, hostName)
+    connectionFactory.setIntProperty(WMQConstants.WMQ_PORT, hostPort)
+    connectionFactory.setStringProperty(WMQConstants.WMQ_CHANNEL, channelName)
+    connectionFactory.setIntProperty(WMQConstants.WMQ_CONNECTION_MODE, WMQConstants.WMQ_CM_CLIENT)
+    connectionFactory.setStringProperty(WMQConstants.WMQ_QUEUE_MANAGER, queueManagerName)
+//Added for USER_AUTHENTICATION_MQCSP
+    //connectionFactory.setBooleanProperty(WMQConstants.USER_AUTHENTICATION_MQCSP, false)
+    //connectionFactory.setStringProperty(WMQConstants.USERID, &quot;srvc_rtc_mq&quot;)
+    
+    // Load the keystore
+    //String keystoreType = &quot;jks&quot; 
+    //String keystorePath = &quot;rtc_mq_client_07312024.jks&quot; 
+    //String keystorePassword = &quot;&quot;
+    
+    //KeyStore ks = KeyStore.getInstance(keystoreType)
+    //FileInputStream fis = new FileInputStream(keystorePath)
+    //ks.load(fis, keystorePassword.toCharArray())
+    
+    // Init the KeyManagerFactory with the keystore
+    //KeyManagerFactory kmf = KeyManagerFactory.getInstance(KeyManagerFactory.getDefaultAlgorithm())
+    //kmf.init(ks, keystorePassword.toCharArray())
+    
+    // Init the TrustManagerFactory with the keystore
+    //TrustManagerFactory tmf = TrustManagerFactory.getInstance(TrustManagerFactory.getDefaultAlgorithm())
+    //tmf.init(ks)
+    
+    // Init SSLContext with the key managers and trust managers
+    //SSLContext sslContext = SSLContext.getInstance(&quot;TLSv1.2&quot;)
+    //sslContext.init(kmf.getKeyManagers(), tmf.getTrustManagers(), new java.security.SecureRandom())
+    //SSLSocketFactory sslSocketFactory = sslContext.getSocketFactory()
+
+    //connectionFactory.setStringProperty(WMQConstants.WMQ_SSL_CIPHER_SPEC, cipherSuite)
+    //connectionFactory.setStringProperty(WMQConstants.WMQ_SSL_CIPHER_SUITE, &quot;&quot;)
+    //connectionFactory.setObjectProperty(WMQConstants.WMQ_SSL_SOCKET_FACTORY, sslSocketFactory)
+    //connectionFactory.setStringProperty(WMQConstants.WMQ_SSL_PEER_NAME, sslPeerName)
+
+    def jmsConnection = connectionFactory.createConnection()
+    def jmsSession = jmsConnection.createSession(true, Session.AUTO_ACKNOWLEDGE)
+    def destinationQueue = jmsSession.createQueue(queueName)
+
+    log.info(&quot;### MQ setup completed&quot;)
+
+    def messageProducer = jmsSession.createProducer(destinationQueue)
+
+//String filepath = &quot;H:\\LoadTesting\\1XVolume\\DataFiles\\ARCA\\1X\\Account\\ARCAD0914_1.txt&quot;;
+//String filepath = vars.get(&quot;filePath&quot;) + &quot;sample_msg.txt&quot;;
+String filepath = &quot;/mnt/sample_msg.txt&quot;;
+log.info(&quot;####filepath == &quot;+filepath);
+
+//StringBuilder filecontent = new StringBuilder();
+try {
+	//FileReader fr = new FileReader(filepath);
+	//BufferedReader br = new BufferedReader(fr);
+
+	String msg;
+	lc = Integer.parseInt(vars.get(&quot;CBOE_loopcounter&quot;))
+	//sleep_time = Integer.parseInt(vars.get(&quot;CBOE_sleeptime&quot;))
+	//log.info(&quot;loopcounter is&quot; + lc)
+	
+	for(i=0;i&lt;lc;i++){
+		//msg = br.readLine()
+			//StringBuilder filecontent = new StringBuilder();
+		//filecontent.append(msg);
+		//vars.put(&quot;filecontent&quot;,filecontent.toString());
+		//log.info(&quot;in Beanshell:*******&quot; + filecontent);
+		//message = msg.toString()
+		message = &quot;Greg Rocks!!! for queue &quot; + queueName;
+		log.info(&quot;message to send to &quot; + queueName + &quot; is &quot; + message);
+	   	def textMessage = jmsSession.createTextMessage(message)
+	    	messageProducer.send(textMessage)
+	    	//Thread.sleep(sleep_time)
+	 	//log.info(&quot;Message : &quot; + msg);
+	}
+	//br.close();
+	jmsSession.commit();
+	
+}
+catch (IOException e) {
+	log.error(&quot;Error reading the file: &quot; + e.getMessage());
+}
+
+    
+    
+    log.info(&quot;### Message sent successfully&quot;)
+
+} 
+catch (Exception e) {
+    log.error(&quot;Exception: &quot; + e.toString())
+    e.printStackTrace()
+}
+finally {
+    messageProducer.close()
+    jmsSession.close()
+    jmsConnection.close()
+}
+</stringProp>
+        </JSR223Sampler>
+        <hashTree/>
+        <ResultCollector guiclass="StatVisualizer" testclass="ResultCollector" testname="Aggregate Report">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <sentBytes>true</sentBytes>
+              <url>true</url>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+              <connectTime>true</connectTime>
+            </value>
+          </objProp>
+          <stringProp name="filename">/mnt/CBOE_Batch1.csv</stringProp>
+        </ResultCollector>
+        <hashTree/>
+      </hashTree>
+    </hashTree>
+  </hashTree>
+</jmeterTestPlan>

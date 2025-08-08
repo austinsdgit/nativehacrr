@@ -1,0 +1,24 @@
+{
+  "channel":
+  [
+    {
+      "general":
+      {
+        "description": "MQ channel details"
+      },
+      "name": "MQ.QS.SVRCONN",
+      "clientConnection":
+      {
+        "connection":
+        [
+          {
+            "host": "occmq-mq02ha-ibm-mq.occmq.svc.cluster.local",
+            "port": 1414
+          }
+        ],
+        "queueManager": "mq02ha"
+      },
+	  "type": "clientConnection"
+    }
+  ]
+}

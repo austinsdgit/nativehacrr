@@ -1,0 +1,33 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: busybox2
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: busybox2
+  template:
+    metadata:
+      labels:
+        app: busybox2
+    spec:
+      containers:
+        - name: busybox
+          image: busybox
+          command:
+            - sleep
+            - "3600"
+          volumeMounts:
+            - name: perf-volume
+              mountPath: /mnt
+            - name: mq-bin-volume
+              mountPath: /opt
+      volumes:
+        - name: perf-volume
+          persistentVolumeClaim:
+            claimName: shared-perf2
+        - name: mq-bin-volume
+          persistentVolumeClaim:
+            claimName: shared-mq-bin2

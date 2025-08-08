@@ -1,0 +1,24 @@
+{
+  "channel":
+  [
+    {
+      "general":
+      {
+        "description": "MQ channel details"
+      },
+      "name": "$CHLCAPS",
+      "clientConnection":
+      {
+        "connection":
+        [
+          {
+            "host": "occmq-mq01ha-ibm-mq.occmq.svc.cluster.local",
+            "port": 1414
+          }
+        ],
+        "queueManager": "$QMname"
+      },
+	  "type": "clientConnection"
+    }
+  ]
+}
