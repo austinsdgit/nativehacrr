@@ -1,4 +1,4 @@
-source ../../setup.properties
+source ../setup.properties
 
 export QMname=$1
 export TARGET_NAMESPACE=$2
