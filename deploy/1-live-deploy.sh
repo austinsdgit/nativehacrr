@@ -2,7 +2,7 @@
 #
 # This template will generated the variables needed for the live nativeha CRR deploy script
 #
-source ../../setup.properties
+source ../setup.properties
 
 echo "Logging into Cluster 1 to setup live QMgr"
 #oc login https://api.67c20883d1ee7bb0b5beada0.am1.techzone.ibm.com:6443 -u student8 -p welcometoFSMpot
