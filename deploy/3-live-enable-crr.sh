@@ -2,7 +2,7 @@
 ##
 # This template will get the host for Live cluster to enable the nativeha CRR deploy script
 #
-source ../../setup.properties
+source ../setup.properties
 
 export HA_DIR_DEPLOY="nativeha-crr/deploy"
 export TARGET_NAMESPACE=occmq2
