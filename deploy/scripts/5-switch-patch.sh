@@ -11,7 +11,7 @@ yellow=$(tput setaf 3)
 bold=$(tput bold)
 normal=$(tput sgr0)
 #
-export HA_DIR_DEPLOY="nativeha-crr/deploy"
+export HA_DIR_DEPLOY="nativehacrr/deploy"
 export TARGET_NAMESPACE=$2
 export QMname=$1
 ##oc project $TARGET_NAMESPACE
@@ -35,9 +35,11 @@ echo "switch cluster 1"
 echo "Switching Role on Cluster 1 from ${bold}${CURRENT_ROLE}${normal} to ${bold}${ROLE}${normal}"
 ./scripts/5-live-switch-patch.sh $QMname
 
+#oc logout
 echo ""
 # Logon to the Recovery cluster
 echo "Logon to OpenShift Cluster 2" 
+echo "${OCP_CLUSTER2} is the 2nd cluster"
 oc login ${OCP_CLUSTER2} -u ${OCP_CLUSTER_USER2} -p ${OCP_CLUSTER_PASSWORD2} > /dev/null 2>&1
 
 export CURRENT_ROLE=$(oc get QueueManager $QMname -o jsonpath='{.spec.queueManager.availability.nativeHAGroups.local.role}')
@@ -50,6 +52,7 @@ else
 fi   
 ( echo "cat <<EOF" ; cat 5-switch-roles-template.yaml ; echo EOF ) | sh > 5-switch-roles.yaml
 echo "switch cluster 2"
+oc cluster-info
 echo "Switching Role on Cluster 2 from ${bold}${CURRENT_ROLE}${normal} to ${bold}${ROLE}${normal}"
 
 ./scripts/5-recovery-switch-patch.sh $QMname

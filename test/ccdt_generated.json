@@ -12,7 +12,7 @@
         "connection":
         [
           {
-            "host": "occmq-mq02ha-ibm-mq.occmq.svc.cluster.local",
+            "host": "occmq-mq01ha-ibm-mq.occmq.svc.cluster.local",
             "port": 1414
           }
         ],

@@ -5,7 +5,7 @@
 source ../setup.properties
 
 
-export HA_DIR_DEPLOY="nativeha-crr/deploy"
+export HA_DIR_DEPLOY="nativehacrr/deploy"
 export TARGET_NAMESPACE=occmq2
 export QMInstance=occmq2-mq02ha
 export QMpre=mq02

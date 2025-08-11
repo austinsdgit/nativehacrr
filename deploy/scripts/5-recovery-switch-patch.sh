@@ -8,8 +8,14 @@ export QMInstance=$1
 
 # Logon to the active cluster
 #oc login https://api.67c20883d1ee7bb0b5beada0.am1.techzone.ibm.com:6443 -u student8 -p welcometoFSMpot
-#oc login $OCP_CLUSTER2 -u $OCP_CLUSTER_USER2 -p $OCP_CLUSTER_PASSWORD2 > /dev/null 2>&1
-oc login --token=sha256~ljv7dRx1Aw2xU_IEJhukjskje9cGpDDxYnGvr3GTWvM --server=https://api.itz-znevd1.osv.techzone.ibm.com:6443 > /dev/null 2>&1
+echo "${OCP_CLUSTER2} is the 2nd cluster"
 
+oc login ${OCP_CLUSTER2} -u ${OCP_CLUSTER_USER2} -p ${OCP_CLUSTER_PASSWORD2} > /dev/null 2>&1
+#oc login --token=sha256~ljv7dRx1Aw2xU_IEJhukjskje9cGpDDxYnGvr3GTWvM --server=https://api.itz-znevd1.osv.techzone.ibm.com:6443 > /dev/null 2>&1
+oc login https://api.itz-rdwaa0.infra01-lb.dal14.techzone.ibm.com:6443 -u kubeadmin -p gtpom-ZjSJq-7IJLS-M2E9x
+
+
+echo "about to switch Recovery to Live with \n"
+cat 5-switch-roles.yaml
 
 oc patch QueueManager $QMInstance --type merge --patch "$(cat 5-switch-roles.yaml)"
