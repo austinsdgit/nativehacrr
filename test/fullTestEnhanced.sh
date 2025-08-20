@@ -100,6 +100,8 @@ function read_messages() {
     #duration=$(/mnt/mqm-data/blast -m "$MQ_QMGR" -q "$MQ_QUEUE$queueIdentifier" -R -n $numMessages -w 1 | grep -i "Elapsed" | awk '{print $5}')
     /mnt/mqm-data/blast -m "$MQ_QMGR" -q "$MQ_QUEUE$queueIdentifier" -R -n $numMessages -w 1 > /tmp/thread$thread_id.txt
     duration=$(grep -i "Elapsed" /tmp/thread$thread_id.txt | awk '{print $5}')
+    #echo "grep \"message\" /tmp/thread$thread_id.txt | awk '{print $2}')"
+    numCount=$(grep "message" /tmp/thread$thread_id.txt | awk '{print $2}')
     #count=$(/opt/mqm/samp/bin/amqsblstc "$MQ_QMGR" "$MQ_QUEUE$queueIdentifier" -R -r 1000  | grep -i "messages" | wc -l)
     #count=$((count*100))
     
@@ -113,19 +115,20 @@ function read_messages() {
 
     # Calculate transactions per second (TPS)
     #duration=$(echo "scale=2; $duration - 1" | bc)
-    intDur=$(printf "%.0f" "$duration")
+    #intDur=$(printf "%.0f" "$duration")
+    intDur=$(echo "scale=4; $duration" | bc -l) 
     #echo "intDur == $intDur"
-    if [ $intDur -gt 0 ]; then
+    #if [ $intDur -gt 0 ]; then
         #echo "duration is greater than 0 and count == $count"
         #local tps=$(echo "scale=2; $numMessages / ($duration / 1000)" | bc)
-        local tps=$(echo "scale=2; $numMessages / $duration" | bc)
+        local tps=$(echo "scale=2; $numCount / $duration" | bc)
         #local tps=$(echo "scale=2; $count / ($duration / 1000)" | bc)
         echo "$tps"
         #echo "Thread $thread_id: Read $count messages in $duration milliseconds"
         #echo "Thread $thread_id: Transactions per second (TPS): $tps"
-    else
-        echo "Thread $thread_id: Error: Duration is 0 milliseconds. Check queue and connection."
-    fi
+    #else
+     #   echo "Thread $thread_id: Error: Duration is 0 milliseconds. Check queue and connection."
+    #fi
     
 }
 
@@ -151,6 +154,7 @@ function start_read_threads() {
         #count=$(read_messages $i &)
         #echo "total count from thread == $count"
         read_messages $i $PER_QUEUE_NUM_MSGS > /tmp/tmpFile$i.txt &
+        #read_messages $i > /tmp/tmpFile$i.txt &
         #thread_tps[$i]=$(read_messages $i) &
         #echo "$count" > tmpFile$i.txt
         
@@ -160,7 +164,7 @@ function start_read_threads() {
     wait
     for ((i=0; i<=total_threads; i++)); do
         thread_tps[$i]=$(cat /tmp/tmpFile$i.txt)
-        rm -f /tmp/tmpFile$i.txt
+        #rm -f /tmp/tmpFile$i.txt
         echo "thread_tps[$i] == ${thread_tps[$i]}"
     done
 
