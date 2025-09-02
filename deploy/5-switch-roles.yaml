@@ -3,4 +3,4 @@ spec:
     availability:
       nativeHAGroups:
         local:
-          role: Recovery
+          role: Live
