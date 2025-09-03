@@ -2,7 +2,7 @@
 #
 #Use storage class ocs-storagecluster-ceph-rbd when running on CoC PoT clusters
 #mq00 reserved for instructor
-#
+#123
 # Set script variables
 #
 source setup.properties
