@@ -65,7 +65,7 @@ echo " You have set the Namespace to $NS and the instance number to $STUDENT_NUM
 # Update the setup properties
 #
  echo "[INFO] Update ${bold}setup.properties${normal} with your student number"
-./set_properties.sh $NS
+./setupEnv.sh
 #
 # Set script variables
 #
@@ -92,25 +92,7 @@ export VERSION=$IBM_MQ_VERSION
 export LICENSE=$IBM_MQ_LICENSE
 export MQ_NATIVEHA_HOST=$OCP_CLUSTER1
 export MQ_RECOVERY_HOST=$RECV_HOST
-#
-# Build the StreamQ build yaml script.
-#
-echo "..."
-echo "[INFO] Build the ${bold}deployment yamls and test scripts for streamQ labs. ${normal} "
 
-export QMInstance=$QMGR_NS$QMpre"strm"
-export QMname="mq"$STUDENT_NUM"strm"
-export ROUTE="mq"$STUDENT_NUM"strmchl.chl.mq.ibm.com"
-export CHLCAPS="MQ"$STUDENT_NUM"STRMCHL"
-export CHANNEL="mq"$STUDENT_NUM"strmchl"
-export STREAMQ_DIR="streamq/deploy/"
-
-( echo 'cat <<EOF' ; cat template/strm-install.sh_template ; echo EOF ) | sh > $STREAMQ_DIR"strm-install.sh"
-
-chmod +x $STREAMQ_DIR"strm-install.sh"
-
-echo "[INFO] StreamQ build yaml script is complete."
-echo "...."
 #
 # Build the nativeHA-crr build yaml script.
 # This will be for both nativeHA and CRR
@@ -131,8 +113,8 @@ export QMInstance=$QMGR_NS$QMname
 export CHANNEL="mq"$STUDENT_NUM"hachl"
 export ROUTE=$QMGR_NS"mq"$STUDENT_NUM"ha-nativehachl-ibm-mq-qm"
 export CHLCAPS="MQ"$STUDENT_NUM"HACHL"
-export HA_DIR="nativeha-crr/deploy/"
-export HA_TEST_DIR="nativeha-crr/test/"
+export HA_DIR="deploy/"
+export HA_TEST_DIR="test/"
 #
 # Create the tls certs for nativeha CRR
 # 
@@ -192,10 +174,4 @@ export SERVICEc="mq"$STUDENT_NUM"c-ibm-mq"
 export CHANNELc="mq"$STUDENT_NUM"chlc"
 export TOCLUSc="TO_UNICLUS_mq"$STUDENT_NUM"c"
 
-export UNICLUS=UNICLUS"$STUDENT_NUM"
 
-export UNICLUSTER_DIR="unicluster/deploy/"
-( echo 'cat <<EOF' ; cat template/uni-install.sh_template ; echo EOF ) | sh > $UNICLUSTER_DIR"uni-install.sh" 
-chmod +x $UNICLUSTER_DIR"uni-install.sh"
-
-echo "[INFO] unicluster build yaml scripts is complete."

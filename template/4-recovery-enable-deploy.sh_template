@@ -5,17 +5,17 @@
 source ../setup.properties
 
 export HA_DIR_DEPLOY="."
-export TARGET_NAMESPACE=occmq
-export QMInstance=occmq-mq02ha
-export QMpre=mq02
-export QMname=mq02ha
+export TARGET_NAMESPACE=$TARGET_NAMESPACE
+export QMInstance=$QMInstance
+export QMpre=$QMpre
+export QMname=$QMname
 
 # Logon to the active cluster
 #oc login https://api.67c20883d1ee7bb0b5beada0.am1.techzone.ibm.com:6443 -u student8 -p welcometoFSMpot
-oc login https://api.itz-1cm2ta.infra01-lb.fra02.techzone.ibm.com:6443 -u kubeadmin -p PRe2e-ENFRF-vRGMX-2xJGE
-oc project occmq
+oc login ${OCP_CLUSTER1} -u ${OCP_CLUSTER_USER1} -p ${OCP_CLUSTER_PASSWORD1}
+oc project $TARGET_NAMESPACE
 
 ( echo "cat <<EOF" ; cat 4-recovery-enable-crr-template.yaml ; echo EOF ) | sh > 4-recovery-enable-crr.yaml
 
-./scripts/4-recovery-enable-patch.sh occmq-mq02ha
+./scripts/4-recovery-enable-patch.sh $TARGET_NAMESPACE-$QMname
 

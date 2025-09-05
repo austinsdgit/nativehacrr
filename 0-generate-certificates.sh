@@ -9,13 +9,13 @@ fi
 
 export HA_DIR="nativeha-crr"
 
-QMGR_NAME_LOWERCASE=${HA_DIR}/deploy/certs/$(echo $QMGR_NAME | tr '[:upper:]' '[:lower:]')
-QMGR_KEY_FILENAME=${HA_DIR}/deploy/certs/${QMGR_NAME}.key
-QMGR_CSR_FILENAME=${HA_DIR}/deploy/certs/${QMGR_NAME}.csr
-QMGR_CERT_FILENAME=${HA_DIR}/deploy/certs/${QMGR_NAME}.crt
-QMGR_PKCS_FILENAME=${HA_DIR}/deploy/certs/${QMGR_NAME}.p12
-CA_KEY=${HA_DIR}/deploy/certs/$QMGR_NAME-ca.key
-CA_CRT=${HA_DIR}/deploy/certs/$QMGR_NAME-ca.crt
+QMGR_NAME_LOWERCASE=${HA_DIR}/certs/$(echo $QMGR_NAME | tr '[:upper:]' '[:lower:]')
+QMGR_KEY_FILENAME=${HA_DIR}/certs/${QMGR_NAME}.key
+QMGR_CSR_FILENAME=${HA_DIR}/certs/${QMGR_NAME}.csr
+QMGR_CERT_FILENAME=${HA_DIR}/certs/${QMGR_NAME}.crt
+QMGR_PKCS_FILENAME=${HA_DIR}/certs/${QMGR_NAME}.p12
+CA_KEY=${HA_DIR}/certs/$QMGR_NAME-ca.key
+CA_CRT=${HA_DIR}/certs/$QMGR_NAME-ca.crt
 PASSWORD=passw0rd
 
 rm $CA_KEY $CA_CRT $QMGR_KEY_FILENAME $QMGR_CSR_FILENAME $QMGR_CERT_FILENAME $QMGR_PKCS_FILENAME ${QMGR_NAME_LOWERCASE}.jks   > /dev/null 2>&1 

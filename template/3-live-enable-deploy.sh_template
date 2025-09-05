@@ -5,18 +5,18 @@
 source ../setup.properties
 
 export HA_DIR_DEPLOY="."
-export TARGET_NAMESPACE=occmq
-export QMInstance=occmq-mq02ha
-export QMpre=mq02
-export QMname=mq02ha
+export TARGET_NAMESPACE=$TARGET_NAMESPACE
+export QMInstance=$QMInstance
+export QMpre=$QMpre
+export QMname=$QMname
 
 # Logon to the active cluster
 #oc login https://api.67c20883d1ee7bb0b5beada0.am1.techzone.ibm.com:6443 -u student8 -p welcometoFSMpot
 
 echo "Logging into Cluster 2 to get recovery route to patch live QMgr"
-oc login https://api.itz-axjnea.infra01-lb.fra02.techzone.ibm.com:6443 -u kubeadmin -p AUKEs-vVt5F-JKtTc-GxGxV
-oc project occmq
+oc login ${OCP_CLUSTER2} -u ${OCP_CLUSTER_USER2} -p ${OCP_CLUSTER_PASSWORD2}
+oc project $TARGET_NAMESPACE
 
 ( echo "cat <<EOF" ; cat 3-live-enable-crr-template.yaml ; echo EOF ) | sh > 3-live-enable-crr.yaml
 
-./scripts/3-live-enable-patch.sh occmq-mq02ha
+./scripts/3-live-enable-patch.sh $TARGET_NAMESPACE-$QMname

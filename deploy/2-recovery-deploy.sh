@@ -5,15 +5,15 @@
 source ../setup.properties
 echo "Logging into Cluster 2 to setup recovery QMgr"
 #oc login https://api.67c20883d1ee7bb0b5beada0.am1.techzone.ibm.com:6443 -u student8 -p welcometoFSMpot
-oc login https://api.itz-rdwaa0.infra01-lb.dal14.techzone.ibm.com:6443 -u kubeadmin -p gtpom-ZjSJq-7IJLS-M2E9x > /dev/null 2>&1
+oc login https://api.itz-axjnea.infra01-lb.fra02.techzone.ibm.com:6443 -u kubeadmin -p AUKEs-vVt5F-JKtTc-GxGxV > /dev/null 2>&1
 
-oc project occmq2
-export HA_DIR_DEPLOY="nativeha-crr/deploy"
-export TARGET_NAMESPACE=occmq2
-export QMInstance=occmq2-mq02ha
+oc project occmq
+export HA_DIR_DEPLOY="deploy"
+export TARGET_NAMESPACE=occmq
+export QMInstance=occmq-mq02ha
 export QMpre=mq02
 export QMname=mq02ha
-export ROUTE=occmq2-mq02ha-nativehachl-ibm-mq-qm
+export ROUTE=occmq-mq02ha-nativehachl-ibm-mq-qm
 export CHLCAPS=MQ02HACHL
 export CHANNEL=mq02hachl
 export SC=ocs-external-storagecluster-ceph-rbd
@@ -26,11 +26,11 @@ export CA_CERT=LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUVyRENDQXBRQ0NRREdIU1liM
 
 ( echo "cat <<EOF" ; cat 2-recovery-template.yaml ; echo EOF ) | sh > 2-recovery.yaml
 
-oc apply -f 2-recovery.yaml -n occmq2
+oc apply -f 2-recovery.yaml -n occmq
 
 # create kdb file
-rm ../test/key.*
-runmqakm -keydb -create -db ../test/key.kdb -type cms -pw passw0rd -stash
-runmqakm -cert -add -db ../test/key.kdb -pw passw0rd -label ca -file certs/mq02ha-ca.crt
-runmqakm -cert -add -db ../test/key.kdb -pw passw0rd -label nativeha -file certs/mq02ha.crt
+rm test/key.*
+runmqakm -keydb -create -db test/key.kdb -type cms -pw passw0rd -stash
+runmqakm -cert -add -db test/key.kdb -pw passw0rd -label ca -file certs/mq02ha-ca.crt
+runmqakm -cert -add -db test/key.kdb -pw passw0rd -label nativeha -file certs/mq02ha.crt
 
